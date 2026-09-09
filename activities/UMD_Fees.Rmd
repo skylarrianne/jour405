@@ -33,7 +33,9 @@ umd_fees_pct <- umd_fees |> mutate(pct_change = (`Fall 2026`- `Fall 2021`)/`Fall
 
 Write a few sentences about what you found in those percentages. What's the story here? What questions do you have?
 
-
+The largest percentage change is with Student Counseling Center: Infinite. That is because it did not exist, so this percentage measurement is different than the others. I think the story here would be about how this is an additional cost now because of the increase in need of mental health services post COVID. I'm aware that the first few sessions with the center are free, but would have to look into the cost after that, and what the difference between that and the private sector? Or was did it change funding? Was there any mental health services before? What did they include and how were they funded?
+The actual biggest percentage change is student sustainability with a 150% increase. The story here would be what changes did they make to this part of student life that upped the cost, and what impact has it actually had on campus. Has recent Maryland sustainability policies effected it? Does the University have to adhere to new rules? Do they have a website where they list these services or policies so we can see where this fee is going?
+There are no negative changes, but there is a 0% change in the Athletics fees. The story here is that there is no raising of prices compared to other fees. Why? What makes this fee different? 
 
 
 When you are done, save your work, switch to GitHub Desktop, then add, commit and push your changes to GitHub and submit the URL of the notebook in ELMS.
