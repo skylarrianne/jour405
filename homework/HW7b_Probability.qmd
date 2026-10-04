@@ -9,6 +9,8 @@ In this assignment, you'll build on your z-score skills to answer probability qu
 Load the tidyverse and the White House salaries data from https://raw.githubusercontent.com/dwillis/jour405/refs/heads/main/data/white_house_salaries_2025.csv into a dataframe called `wh_salaries`
 
 ```{r}
+library(tidyverse)
+wh_salaries <- read_csv("https://raw.githubusercontent.com/dwillis/jour405/refs/heads/main/data/white_house_salaries_2025.csv")
 ```
 
 ### Task 2: Filter and summarize (2 points)
@@ -26,11 +28,19 @@ wh_paid <- wh_salaries |>
 Now create a histogram of the paid salaries with a vertical line for the mean and two more for ±1 standard deviation, similar to what you did in HW6 with Spotify data.
 
 ```{r}
+wh_paid |> 
+  ggplot() + 
+  geom_histogram(aes(x = SALARY), binwidth = 10000) +
+  geom_vline(aes(xintercept = mean(SALARY)), color = "red", linetype = "dashed", size = 1) +
+ geom_vline(aes(xintercept = mean(SALARY) - sd(SALARY)), color = "blue", linetype = "dashed", size = 1) +
+  geom_vline(aes(xintercept = mean(SALARY) + sd(SALARY)), color = "blue", linetype = "dashed", size = 1)
 ```
 
 **Describe the shape of the distribution. Is it roughly normal? Skewed? Where do most salaries cluster?**
 
 ANSWER HERE
+
+This data is not normal. It looks like it is more skewed to the right. Most of the salaries are more to the right, and most of the ones that are to the left of the mean are within one standard deviation.
 
 ### Task 3: The Empirical Rule (3 points)
 
@@ -65,6 +75,7 @@ empirical
 **How closely does the data follow the empirical rule? What does any deviation tell you about the distribution?**
 
 ANSWER HERE
+It follows it very closely. The actual percentages are slightly lower for 1SD and 2SD, but for the most part, it is pretty accurate. This tells me that I was correct in assuming this is not a normal distribution because it means the data is more spread out, and has more outliers that can create tails.
 
 ### Task 4: From z-scores to probability with pnorm() (4 points)
 
@@ -103,6 +114,7 @@ actual_prob
 **Write a sentence describing this probability in plain English. How does the normal approximation (prob_less) compare to the actual percentage?**
 
 ANSWER HERE
+The normal approximation is slightly lower than the real probability. The normal approximation is 16%, and the actual percentage is 18%. 
 
 ### Task 5: Probability between two values (3 points)
 
@@ -112,14 +124,14 @@ You'll need to calculate z-scores for those two figures, use `pnorm()` for each,
 
 ```{r}
 
-z_lower <- (REPLACE_ME - mean_sal) / sd_sal
-z_upper <- (REPLACE_ME - mean_sal) / sd_sal
+z_lower <- (80000 - mean_sal) / sd_sal
+z_upper <- (120000 - mean_sal) / sd_sal
 
 prob_between <- pnorm(z_upper) - pnorm(z_lower)
 prob_between
 
 # Verify with actual data
-actual_between <- sum(wh_paid$SALARY >= REPLACE_ME & wh_paid$SALARY <= REPLACE_ME) / total_n
+actual_between <- sum(wh_paid$SALARY >= 80000 & wh_paid$SALARY <= 120000) / total_n
 actual_between
 
 ```
@@ -127,6 +139,8 @@ actual_between
 **Interpret this result. What does this "middle range" tell us about the White House salary structure?**
 
 ANSWER HERE
+The middle range tells us that 32% (the actual percentage) of the White House salaries are between $80,000 and $120,000. If the distribution was normal it would be 36%.
+
 
 ### Task 6: Expected vs. observed (3 points)
 
@@ -159,6 +173,7 @@ bins |> select(category, expected_count, observed_count, difference)
 **Where does reality differ most from what the normal distribution predicts? What might explain those differences?**
 
 ANSWER HERE
+Normal distribution says that there should be 78 employees making $60k-$90k, but there is actually 151, meaning there is a 73 difference. There is also a lot less than predicted below $60k. The White House salaries do not follow normal distribution.
 
 ### Task 7: Story pitch (4 points)
 
@@ -167,6 +182,13 @@ Based on your probability analysis, write a headline and lede for a story about 
 Then write 2-3 sentences describing how you would use probability thinking to advance this story — what could you compare these probabilities to, and what additional analysis would help?
 
 ANSWER HERE
+
+In my article, I would compare salary percentages with employees at federal agencies to those at the White House and see if the White House salaries are high or low. I would also go through the positions at the White House to see what kind of employees are making the top salaries, and who are making the lowest salaries and why that is. For my article, I would write about what White House employees are making and how that fits in to federal jobs.
+
+Headline: Most White House Employees hit the Six-Figure Salary Mark
+
+Lede: White House salaries are heavily concentrated in the $60,000-$90,000 range, but a larger number are spread out between $100,000 to above $150,000, making most of the employees six-figure earners.
+
 
 ### Task 8: Save Your Work and Put it on GitHub
 
