@@ -41,7 +41,7 @@ sleep_stats
 
 **Answer this question:** Based on these numbers alone, what would you tell the health reporter? Why might it be risky to report the average as the definitive answer for all students?
 
-ANSWER HERE
+ANSWER HERE: Based on this, I would tell the health reporter that students are getting pretty good sleep based on the mean, but the standard deviation is 1.35, which would fall under the recommended amount of sleep of 7 hours. I don't know how many students are scoring under this average, so I can't that the whole student body is healthy sleepers.
 
 ### Task 3: Calculate the standard error
 
@@ -58,7 +58,10 @@ sleep_stats
 
 **Answer this question:** The standard error is much smaller than the standard deviation. Why? What does each one measure?
 
-ANSWER HERE
+The standard deviation is based on the sample we have, and the standard error is based on if we took more samples based on the size. 
+
+ANSWER HERE: 
+I think the standard error is smaller because it is measuring the precision based on the mean. Because even if we take another sample, the mean would probably be pretty similar, then the mean would probably not vary that much. The standard deviation is bigger because it's measuring how spread out the data is. The data could be very spread out and still have the same mean.
 
 ### Task 4: Calculate a 95% confidence interval
 
@@ -79,7 +82,9 @@ sleep_stats |>
 
 **Answer this question:** Write one sentence explaining what this confidence interval means in plain English that a reader would understand.
 
-ANSWER HERE
+ANSWER HERE: 
+
+We are 95% confident that the true average hours of sleep for students falls between 7.3 and 8.2
 
 ### Task 5: Visualize the distribution with the confidence interval
 
@@ -112,7 +117,7 @@ ggplot(sleep_data, aes(x = hours)) +
 
 **Answer this question:** Look at the chart. Notice that the confidence interval is much narrower than the spread of individual data points. Why? What's the difference between the variation in individual sleep hours and the uncertainty about the average?
 
-ANSWER HERE
+ANSWER HERE: Like I said earlier, data points can be spread out in different sample, while the mean remains stable. Individual sleep hours doesn't necessarily change the mean drastically, which is why the confidence interval is going to be narrow, because we can expect the mean to be relatively around that point, especially because most of the data points are nearby.
 
 ### Task 6: The CDC question — is 7 hours within the interval?
 
@@ -134,7 +139,7 @@ sleep_stats |>
   b) "Students May Not Be Getting Enough Sleep, Survey Suggests"
   c) "Survey: Students Getting Recommended Amount of Sleep"
 
-ANSWER HERE
+ANSWER HERE: I think Headline A is justified, because we are 95% confident that the average is above 7.3, so I think it's fair to say that students average more than 7 hours. 
 
 ### Task 7: What about a bigger sample?
 
