@@ -172,7 +172,7 @@ Headline: Prince George's County Averages about 376 Car Thefts a Month
 Lede: Prince George's County averages about 376 car thefts per month over the 32 month period studied. The number 376 is an estimate, but researchers are confident the average is between 341 to 410 thefts per month.
 
 2.
-The confidence interval alone doesn't give an estimate of a trend, just where the true mean could be.We do have the month to month data, and can look at the trend from the graphs created, but the confidence interval alone wouldn't give an answer. In order to answer the trend question more definitively, I would want to track the numbers month by month to see whether they are decreasing or increasing.
+The confidence interval alone doesn't give an estimate of a trend, just where the true mean could be.We do have the month to month data, and can look at the trend from the graphs created, but the confidence interval alone wouldn't give an answer. In order to answer the trend question more definitively, I would want to track the numbers month by month to see whether they are decreasing or increasing, an
 
 
 
