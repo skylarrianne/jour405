@@ -36,7 +36,9 @@ Survey weighting is like adjusting the volume on different voices in a conversat
 ## Our Questions
 
 1. How does weighting affect our estimates of voting intentions?
+Weighting affects our estimates of voting intentions because it helps the sample better fit the population's intentions.
 2. Which demographic groups show the largest differences between weighted and unweighted results?
+
 3. How might weighting influence reporting of this data?
 
 # Data Overview
@@ -92,11 +94,13 @@ ggplot(nonvoters_data, aes(x = weight)) +
 
 **Questions:**
 
-1. What is the range of weights in this dataset?
+1. What is the range of weights in this dataset? The range is from below .5 to somewhere between 
 
 2. What does it mean when a respondent has a weight of 0.23? What about 3.04?
+A weight of .23 counts as less than 1 person because that population was overrepresented so the weighting tries to balance it out. 3.04 would about as more than one person for the opposite reason- they are underrepresented.
 
 3. Why might some respondents be weighted more heavily than others?
+Because they are a part of an underrepresented community/identity.
 
 # Exercise 1: Voter Categories and Weighting
 
@@ -231,8 +235,10 @@ kable(comparison, digits = 1, caption = "Difference Between Weighted and Unweigh
 
 **Answer These Questions:**
 
-1. Which voter category shows the biggest difference between weighted and unweighted results?
+1. Which voter category shows the biggest difference between weighted and unweighted results? The biggest difference is those who rarely never "yes" vote, which decreased by 3.6%
 
 2. How might these differences affect reporting on likely voter turnout?
+This means that people who rarely vote are actually more unlikely to vote after weighting because they were overrepresenting their actual number in the population, so their number was decreased. We wouldn't want to report that more people are not going to vote.
 
 3. Why do you think these differences exist? What does this tell us about who might be over or under-represented in the sample?
+The differences exist because different voters interact with surveys differently. The overrepresented population was the people who said they rarely vote, so after weighting, the percentage decreased, which tells journalist that there is a bigger estimate of how many people will vote.
