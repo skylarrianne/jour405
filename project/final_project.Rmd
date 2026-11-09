@@ -1,0 +1,51 @@
+---
+title: "Are Maryland Summers Getting Hotter Faster than they were in the Past"
+author: "Skylar Mullin
+output: html_notebook
+---
+
+#Background Info and Hypothesis
+
+For my final project, I want to analyze data to see whether Maryland summers are warming at a faster rate than they were in the past. Climate change is an important topic, and I want to use data to see how it is affecting Maryland summers. I got the idea because I was sweating my ass off thsi summer.
+
+My main hypothesis is that the average summer temperatures have increased since 1895 in Maryland. I want to further investigate whether the rate at which these temperatures are increasing has changed over time. The data I will be using for this analysis is from the National Oceanic and Atmospheric Administration (NOAA). I will analyze the data to search for potential upward trends.
+
+
+#Data
+
+The data from NOAA can be accessed here: https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/statewide/time-series
+
+For this project, I selected the state Maryland, a 3-month time period spanning from June to August, and a year range of 1895 to 2026 which is all the data the NOAA has. The data is aggregated statewide, not just individual weather stations. It is availible in CSV form below.
+
+```{r}
+library(tidyverse)
+```
+```{r}
+climate_data <- read.csv("marylandsummers.csv")
+```
+
+```{r}
+climate_data
+```
+
+The data set has two columns: date and the average temperature. For my project on evaluating whether climate change is accelerating, I only need these two. In my project, I will most likely group the date by the years of 1895-1950, 1951-200, 2001-2026, so that I can analyze the acceleration.
+
+The data has 134 observations, which mean there is one average per summer, not per summer month. This still works for my project.
+
+#Further research
+
+I plan to compare the different time period and create a visualization of the average summer temperatures and how they might have changed since 1895. 
+
+I could also potentially compare average nighttime and daytime temperatures to see whether one has increased faster than the other. I would need to download additional data from NOAA for this. I was trying to explore this option but was finding difficulty finding data on it. I don't know if looking at the maximum temperature for the daytime, and the minimum temperature for the nighttime would have the same result? I went ahead and downloaded those csv's below.
+
+```{r}
+daytime_high <- read.csv("summermax.csv")
+```
+
+```{r}
+nighttime_low <- read.csv("summermin.csv")
+```
+
+Both also contain the same number of observations, meaning it marks the lowest and highest temperature for each summer. It also contains the two columns of date and temperature.
+
+Going forward, the only question I have is if this is enough data for my analyses. Should I download the average, minimum, and maximum temperatures of each month instead? 
