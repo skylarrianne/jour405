@@ -49,3 +49,24 @@ nighttime_low <- read.csv("summermin.csv")
 Both also contain the same number of observations, meaning it marks the lowest and highest temperature for each summer. It also contains the two columns of date and temperature.
 
 Going forward, the only question I have is if this is enough data for my analyses. Should I download the average, minimum, and maximum temperatures of each month instead? 
+
+#Changes after Feedback
+
+I will use the time periods 1895-1938, 1939-1982, and 1983-2026 because these are more equal in time. 
+
+The daytime and nighttime averages will be labeled as "average daily lows" and "average daily highs".
+
+My analysis will focus on rates of change, not just average differences.
+
+
+#The Tests I could Run
+
+My starting point for this project would be to calculate the mean, median and standard deviation for each of the three time periods. These would give me baseline analysis of the general temperature trends and compare the different periods.. 
+
+One of the most important parts of my project would be to calculate rates of change in temperature. I think regression will be another useful part of this analysis. I could create a scatter plot of the average summer temperatures per year, and add a regression line to show the relationship between the two. I could also break down each time period into a different scatterplot, to show the difference in slopes, which helps with my analysis on whether Maryland summers are warming faster than they were in the past.
+
+Another part of my analysis is comparing the average daily highs and average daily lows. I will use the same regression approach to compare their rates of change.
+
+Finally, I could use statistical significance testing to see whether the change in temperature is statistically significant. I will compare the slopes and see if the rate of warming has changes, and will use p-values to determine whether it is a stiatistically significant change.
+
+
